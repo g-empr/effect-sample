@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>ほげー</title>
+  <link rel="stylesheet" href="css/sanitize.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+  $(function(){
+    //
+    //　■
+    //■■■　
+    //　■
+    //↑のような配置のパネルをぐるぐる移動させるので中央に来るパネルに合わせて他のパネルの座標も操作する必要がある。
+    //例えば、トップパネルからライトパネルに移動するとき、左下にセンターパネルの軌跡を表示したいときなどに重要(※1)。
+    //その際各パネルの位置は{top:'0',right:'0',bottom:'0',left:'0'}のように上下左右端部を確定させた値を指定すること。
+    //
+    //center - センターパネルの各リンクを押したときの動作(未完)
+    $('.center-panel .panel-top a').click(function(){
+      //センターパネルの移動
+      $('.center-panel').animate({top:'100%',left:'0'},{ duration: 600, easing: 'swing', });
+      //トップパネルの移動
+      $('.top-panel').animate({top:'0',left:'0'},{ duration: 600, easing: 'swing', });
+      //ライトパネルの移動
+      $('.right-panel').animate({bottom:'-100%',right:'-100%'},{ duration: 600, easing: 'swing', });
+      //ボトムパネルの移動
+      $('.bottom-panel').animate({bottom:'-200%',left:'0'},{ duration: 600, easing: 'swing', });
+      //レフトパネルの移動
+      $('.left-panel').animate({bottom:'-100%',left:'-100%'},{ duration: 600, easing: 'swing', });
+    });
+    $('.center-panel .panel-right a').click(function(){
+      $('.center-panel').animate({left:'-100%',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.top-panel').animate({left:'-100%',top:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.right-panel').animate({left:'0',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.bottom-panel').animate({left:'-100%',bottom:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.left-panel').animate({left:'-200%',top:'0'},{ duration: 600, easing: 'swing', });
+    });
+    $('.center-panel .panel-bottom a').click(function(){
+      $('.center-panel').animate({top:'-100%',left:'0'},{ duration: 600, easing: 'swing', });
+      $('.top-panel').animate({top:'-200%',left:'0'},{ duration: 600, easing: 'swing', });
+      $('.right-panel').animate({top:'-100%',right:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.bottom-panel').animate({top:'0',left:'0'},{ duration: 600, easing: 'swing', });
+      $('.left-panel').animate({top:'-100%',left:'-100%'},{ duration: 600, easing: 'swing', });
+    });
+    $('.center-panel .panel-left a').click(function(){
+      $('.center-panel').animate({right:'-100%',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.top-panel').animate({right:'-100%',top:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.right-panel').animate({right:'-200%',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.bottom-panel').animate({left:'-100%',bottom:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.left-panel').animate({left:'0',top:'0'},{ duration: 600, easing: 'swing', });
+    });
+    //top - トップパネルの各リンクを押したときの動作
+    $('.top-panel .panel-right a').click(function(){ /*※1*/
+      $('.center-panel').animate({left:'-100%',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.top-panel').animate({left:'-100%',top:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.right-panel').animate({left:'0',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.bottom-panel').animate({left:'-100%',bottom:'-100%'},{ duration: 600, easing: 'swing', });
+      $('.left-panel').animate({left:'-200%',top:'-100%'},{ duration: 600, easing: 'swing', });
+    });
+    //right - ライトパネルの各リンクを押したときの動作
+    $('.right-panel .panel-top a').click(function(){ /*※1*/
+      $('.center-panel').animate({top:'100%',right:'0',bottom:'-100%',left:'0'},{ duration: 600, easing: 'swing', });
+      $('.top-panel').animate({left:'0',top:'0'},{ duration: 600, easing: 'swing', });
+      $('.right-panel').animate({left:'100%',top:'100%'},{ duration: 600, easing: 'swing', });
+      $('.bottom-panel').animate({left:'0',bottom:'-200%'},{ duration: 600, easing: 'swing', });
+      $('.left-panel').animate({left:'-100%',bottom:'-100%'},{ duration: 600, easing: 'swing', });
+    });
+    //bottom - ボトムパネルの各リンクを押したときの動作
+    //left - レフトパネルの各リンクを押したときの動作
+  });
+  </script>
+</head>
+<body>
+  <div class="panel-area">
+    <div class="center-panel">
+      <div class="panel-inner">
+        <div class="panel-top"><a href="#">うえ</a></div>
+        <div class="panel-right r-angle"><a href="#">みぎ</a></div>
+        <div class="panel-bottom"><a href="#">した</a></div>
+        <div class="panel-left l-angle"><a href="#">ひだり</a></div>
+      </div>
+    </div>
+    <div class="top-panel">
+      <div class="panel-inner">
+        <div class="panel-top"><a href="#">うえ</a></div>
+        <div class="panel-right r-angle"><a href="#">みぎ</a></div>
+        <div class="panel-bottom"><a href="#">した</a></div>
+        <div class="panel-left l-angle"><a href="#">ひだり</a></div>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="panel-inner">
+        <div class="panel-top"><a href="#">うえ</a></div>
+        <div class="panel-right r-angle"><a href="#">みぎ</a></div>
+        <div class="panel-bottom "><a href="#">した</a></div>
+        <div class="panel-left l-angle"><a href="#">ひだり</a></div>
+      </div>
+    </div>
+    <div class="bottom-panel">
+      <div class="panel-inner">
+        <div class="panel-top"><a href="#">うえ</a></div>
+        <div class="panel-right r-angle"><a href="#">みぎ</a></div>
+        <div class="panel-bottom"><a href="#">した</a></div>
+        <div class="panel-left l-angle"><a href="#">ひだり</a></div>
+      </div>
+    </div>
+    <div class="left-panel">
+      <div class="panel-inner">
+        <div class="panel-top"><a href="#">うえ</a></div>
+        <div class="panel-right r-angle"><a href="#">みぎ</a></div>
+        <div class="panel-bottom"><a href="#">した</a></div>
+        <div class="panel-left l-angle"><a href="#">ひだり</a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

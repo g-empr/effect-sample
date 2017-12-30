@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/sanitize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery.fullpage.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.fullpage.js"></script>
+  <script src="js/fullpage-control.js"></script>
+    <script>
+        $(function(){
+            var setElm = $('h1,h2:eq(7)'),
+            className = 'piece';
+
+            setElm.children().addBack().contents().each(function(){
+                var elmThis = $(this);
+                if (this.nodeType == 3) {
+                    var $this = $(this);
+                    $this.replaceWith($this.text().replace(/(\S)/g, '<span>$&</span>'));
+                }
+                setElm.each(function(){
+                    $(this).find('span').each(function(i){
+                        i = i+1;
+                        $(this).addClass(className+i);
+                    });
+                });
+            });
+        });
+    </script>
+  <title>RAINBOW</title>
+</head>
+<body>
+    <div class="full">
+        <div class="section">
+            <div class="title-content">
+                <h1>RAINBOW</h1>
+                <div class="menu-bar">
+                    <a href="#" class="section-cell">ABOUT</a>
+                    <a href="#" class="section-cell">INDEX</a>
+                    <a href="#" class="section-cell">ONLINE</a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content cloud">
+                <h2>RED : the BURNING</h2>
+                <p>Red is the color at the longer-wavelengths end of the spectrum of visible light next to orange, at the opposite end from violet.[3] Red color has a predominant light wavelength of roughly 620–740 nanometers. Light with a longer wavelength than red but shorter than terahertz radiation and microwave is called infrared.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>ORANGE : the ACTIVE</h2>
+                <p>Orange is the colour between red and yellow on the spectrum of light, and in the traditional colour wheel used by painters. Its name is derived from the fruit orange.<br>In Europe and America, surveys show that orange is the colour most associated with amusement, the unconventional, extroverts, warmth, fire, energy, activity, danger, taste and aroma, the autumn season, and Protestantism, as well as having long been the national colour of the Netherlands and the House of Orange. In Asia it is an important symbolic colour of Buddhism and Hinduism.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>YELLOW : the BLIGHTED</h2>
+                <p>Yellow is the color between green and orange in the spectrum of visible light, the color of ripe lemons, sunflowers and gold. It is a primary color in subtractive color, used in color printing. According to surveys in Europe, Canada and the United States, yellow is the color people most often associate with amusement, gentleness, and spontaneity, but also with duplicity, envy, jealousy, avarice, and, in the U.S., with cowardice. It plays an important role in Asian culture, particularly in China, where it is seen as the color of happiness, glory, wisdom, harmony and culture.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>GREEN : the OVERGROWN</h2>
+                <p>Green is the color between blue and yellow on the spectrum of visible light. It is evoked by light with a predominant wavelength of roughly 495–570 nm. In the subtractive color system, used in painting and color printing, it is created by a combination of yellow and blue, or yellow and cyan; in the RGB color model, used on television and computer screens, it is one of the additive primary colors, along with red and blue, which are mixed in different combinations to create all other colors.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>LIGHT BLUE : the MOISTURE</h2>
+                <p>The first recorded use of "light blue" as a color term in English is in the year 1915.[1]
+
+In Russian and some other languages, there is no single word for blue, but rather different words for light blue and dark blue. The ancient Greek word for a light blue, glaukos, also could mean light green, gray, or yellow. In Modern Hebrew, light blue, Tchelet is differentiated from dark blue, Kachol.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>INDIGO : the DEEP</h2>
+                <p>Indigo is a color that is traditionally regarded as a color in the visible spectrum, as well as one of the seven colors of the rainbow: the color between blue and violet. Although traditionally considered one of seven major spectral colors, sources differ as to its actual position in the electromagnetic spectrum.[citation needed] Indigo is a deep and bright color close to the color wheel blue (a primary color in the RGB color space), as well as to some variants of ultramarine.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>PURPLE : the STRANGE</h2>
+                <p>Purple is a color intermediate between red and blue. It is similar to violet, but unlike violet, which is a spectral color with its own wavelength on the visible spectrum of light, purple is a composite color made by combining red and blue. According to surveys In Europe and the U.S., purple is the color most often associated with royalty, magic, mystery and piety. When combined with pink, it is associated with eroticism, femininity and seduction.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>RAINBOW</h2>
+                <p>A RAINBOW is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum of light appearing in the sky. It takes the form of a multicoloured arc. Rainbows caused by sunlight always appear in the section of sky directly opposite the sun.<br>Rainbows can be full circles; however, the average observer sees only an arc formed by illuminated droplets above the ground,[1] and centred on a line from the sun to the observer's eye.<br>In a primary rainbow, the arc shows red on the outer part and violet on the inner side. This rainbow is caused by light being refracted when entering a droplet of water, then reflected inside on the back of the droplet and refracted again when leaving it.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
